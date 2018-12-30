@@ -76,14 +76,14 @@ def create_wpa_supplicant(ssid, wifi_key):
     os.system('mv wpa_supplicant.conf.tmp /etc/wpa_supplicant/wpa_supplicant.conf')
 
 def set_ap_client_mode():
-    os.system('rm -f /etc/raspiwifi/host_mode')
-    os.system('rm /etc/cron.raspiwifi/aphost_bootstrapper')
-    os.system('cp /usr/lib/raspiwifi/reset_device/static_files/apclient_bootstrapper /etc/cron.raspiwifi/')
-    os.system('chmod +x /etc/cron.raspiwifi/apclient_bootstrapper')
-    os.system('mv /etc/dnsmasq.conf.original /etc/dnsmasq.conf')
-    os.system('mv /etc/dhcpcd.conf.original /etc/dhcpcd.conf')
-    os.system('cp /usr/lib/raspiwifi/reset_device/static_files/isc-dhcp-server.apclient /etc/default/isc-dhcp-server')
-    os.system('reboot')
+    os.system('sudo rm -f /etc/raspiwifi/host_mode')
+    os.system('sudo rm /etc/cron.raspiwifi/aphost_bootstrapper')
+    os.system('sudo cp /usr/lib/raspiwifi/reset_device/static_files/apclient_bootstrapper /etc/cron.raspiwifi/')
+    os.system('sudo chmod +x /etc/cron.raspiwifi/apclient_bootstrapper')
+    os.system('sudo mv /etc/dnsmasq.conf.original /etc/dnsmasq.conf')
+    os.system('sudo mv /etc/dhcpcd.conf.original /etc/dhcpcd.conf')
+    os.system('sudo cp /usr/lib/raspiwifi/reset_device/static_files/isc-dhcp-server.apclient /etc/default/isc-dhcp-server')
+    os.system('sudo reboot')
 
 def config_file_hash():
     config_file = open('/etc/raspiwifi/raspiwifi.conf')
