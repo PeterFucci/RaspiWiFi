@@ -81,7 +81,7 @@ def set_ap_client_mode():
     os.system('sudo cp /usr/lib/raspiwifi/reset_device/static_files/apclient_bootstrapper /etc/cron.raspiwifi/')
     os.system('sudo chmod +x /etc/cron.raspiwifi/apclient_bootstrapper')
     os.system('sudo mv /etc/dnsmasq.conf.original /etc/dnsmasq.conf')
-    os.system('sudo mv /etc/dhcpcd.conf.original /etc/dhcpcd.conf')
+    os.system('sudo cp /etc/dhcpcd.backup /etc/dhcpcd.conf')
     os.system('sudo cp /usr/lib/raspiwifi/reset_device/static_files/isc-dhcp-server.apclient /etc/default/isc-dhcp-server')
     os.system('sudo reboot')
 
